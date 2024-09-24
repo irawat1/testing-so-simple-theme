@@ -17,7 +17,7 @@
 remote_theme: mmistakes/so-simple-theme@3.2.0
 skin: "/assets/css/skins/default.css"
 locale: en-US
-title: "Itis Awesome Site"
+title: "Testing. Forked from mmistakes/so-simple-theme"
 description: "It really is the best."
 baseurl: # "/testing-so-simple-theme" # the subpath of your site, e.g. "/blog"
 url: # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
