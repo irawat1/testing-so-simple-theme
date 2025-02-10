@@ -8,6 +8,8 @@
   url: /categories/
 - title: Tags
   url: /tags/
+- title: Notebooks
+  url: /notebooks/
 # - title: Recipes
 #   url: /recipes/
 # - title: Search
