@@ -17,8 +17,8 @@
 remote_theme: mmistakes/so-simple-theme@3.2.0
 skin: "/assets/css/skins/default.css"
 locale: en-US
-title: "Testing. Forked from mmistakes/so-simple-theme"
-description: "It really is the best."
+title: "Your Name's Technical Portfolio"
+description: "Python, Data Analysis, and Technical Projects"
 baseurl: # "/testing-so-simple-theme" # the subpath of your site, e.g. "/blog"
 url: # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 logo: # path of site logo, e.g. "/images/logo.png"
@@ -58,7 +58,7 @@ feed:
 search_full_content: false # can have performance implications for large sites
 
 # Taxonomy pages
-# category_archive_path: "/categories/#"
+category_archive_path: "/categories/#"
 tag_archive_path: "/tags/#"
 
 # Exclude from processing.

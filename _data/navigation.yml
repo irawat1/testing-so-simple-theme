@@ -2,16 +2,14 @@
 
 - title: Home
   url: /
+- title: Notebooks
+  url: /notebooks/
 - title: Posts
   url: /posts/
 - title: Categories
   url: /categories/
 - title: Tags
   url: /tags/
-- title: Notebooks
-  url: /notebooks/
-# - title: Recipes
-#   url: /recipes/
 # - title: Search
 #   url: /search/
 # - title: External Page
