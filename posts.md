@@ -11,14 +11,18 @@ entries_layout: list
 {% if postsByYear.size > 2 %}
   <!-- Year-wise display for more than 2 years of posts -->
   {% for year in postsByYear %}
-  <h2 id="{{ year.name }}" class="archive__subtitle">{{ year.name }}</h2>
-  {% for post in year.items %}
-    {% include post-list.html %}
-  {% endfor %}
+    <h2 id="{{ year.name }}" class="archive__subtitle">{{ year.name }}</h2>
+    <div class="entries-{{ page.entries_layout | default: 'list' }}">
+      {% for post in year.items %}
+        {% include entry.html %}
+      {% endfor %}
+    </div>
   {% endfor %}
 {% else %}
   <!-- Simple list for 2 years or fewer -->
-  {% for post in site.posts %}
-    {% include post-list.html %}
-  {% endfor %}
+  <div class="entries-{{ page.entries_layout | default: 'list' }}">
+    {% for post in site.posts %}
+      {% include entry.html %}
+    {% endfor %}
+  </div>
 {% endif %}
