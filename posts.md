@@ -12,10 +12,8 @@ entries_layout: list
 <!-- Debug information -->
 <div style="background: #eee; padding: 10px; margin: 10px 0;">
   <p>Debug Info:</p>
-  <p>postsByYear: {{ postsByYear }}</p>
-  <p>Year Count: {{ years_count }}</p>
-  <p>size: {{ size }}</p>
-  <p>Posts by Year:</p>
+  <p>Years count2: {{ years_count }}</p>
+  <pre>{{ postsByYear | jsonify }}</pre>
   {% for yearGroup in postsByYear %}
     <p>{{ yearGroup.name }}: {{ yearGroup.items | size }} posts</p>
   {% endfor %}
@@ -23,6 +21,7 @@ entries_layout: list
 
 {% if years_count > 2 %}
   <!-- Year-wise display for more than 2 years of posts -->
+  <p>INSIDE IF</p>
   {% for year in postsByYear %}
     <h2 id="{{ year.name }}" class="archive__subtitle">{{ year.name }}</h2>
     <div class="entries-{{ page.entries_layout | default: 'list' }}">
@@ -31,7 +30,7 @@ entries_layout: list
       {% endfor %}
     </div>
   {% endfor %}
-  <p>INSIDE IF</p>
+  
 {% else %}
   <!-- Simple list for 2 years or fewer -->
   <div class="entries-{{ page.entries_layout | default: 'list' }}">
