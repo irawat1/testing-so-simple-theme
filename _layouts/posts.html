@@ -4,20 +4,33 @@ layout: page
 
 {{ content }}
 
-{% assign postsByYear = site.posts | group_by_exp:"post", "post.date | date: '%Y'" %}
+{% assign postsByYear = site.posts | group_by_exp: 'post', 'post.date | date: "%Y"' %}
 
 {% if postsByYear.size > 2 %}
-  <!-- Year-wise display for more than 2 years of posts -->
+  <!-- Show year index only when more than 2 years -->
+  <ul class="taxonomy-index">
+    {% for year in postsByYear %}
+      <li>
+        <a href="#{{ year.name }}">
+          <strong>{{ year.name }}</strong> <span class="taxonomy-count">{{ year.items | size }}</span>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+
   {% for year in postsByYear %}
-    <h2 id="{{ year.name }}" class="archive__subtitle">{{ year.name }}</h2>
-    <div class="entries-{{ page.entries_layout | default: 'list' }}">
-      {% for post in year.items %}
-        {% include entry.html %}
-      {% endfor %}
-    </div>
+    <section id="{{ year.name }}" class="taxonomy-section">
+      <h2 class="taxonomy-title">{{ year.name }}</h2>
+      <div class="entries-{{ page.entries_layout | default: 'list' }}">
+        {% for entry in year.items %}
+          {% include entry.html %}
+        {% endfor %}
+      </div>
+      <a href="#page-title" class="back-to-top">{{ site.data.text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;</a>
+    </section>
   {% endfor %}
 {% else %}
-  <!-- Simple list for 2 years or fewer -->
+  <!-- Simple list for 2 or fewer years -->
   <div class="entries-{{ page.entries_layout | default: 'list' }}">
     {% assign sorted_posts = site.posts | sort: 'date' | reverse %}
     {% for post in sorted_posts %}
