@@ -9,6 +9,16 @@ entries_layout: list
 {% assign postsByYear = site.posts | group_by_exp:"post", "post.date | date: '%Y'" %}
 {% assign years_count = postsByYear | size %}
 
+<!-- Debug information -->
+<div style="background: #eee; padding: 10px; margin: 10px 0;">
+  <p>Debug Info:</p>
+  <p>Year Count: {{ yearCount }}</p>
+  <p>Posts by Year:</p>
+  {% for yearGroup in postsByYear %}
+    <p>{{ yearGroup.name }}: {{ yearGroup.items | size }} posts</p>
+  {% endfor %}
+</div>
+
 {% if years_count > 2 %}
   <!-- Year-wise display for more than 2 years of posts -->
   {% for year in postsByYear %}
