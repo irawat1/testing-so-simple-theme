@@ -12,7 +12,9 @@ entries_layout: list
 <!-- Debug information -->
 <div style="background: #eee; padding: 10px; margin: 10px 0;">
   <p>Debug Info:</p>
-  <p>Year Count: {{ yearCount }}</p>
+  <p>postsByYear: {{ postsByYear }}</p>
+  <p>Year Count: {{ years_count }}</p>
+  <p>size: {{ size }}</p>
   <p>Posts by Year:</p>
   {% for yearGroup in postsByYear %}
     <p>{{ yearGroup.name }}: {{ yearGroup.items | size }} posts</p>
@@ -29,6 +31,7 @@ entries_layout: list
       {% endfor %}
     </div>
   {% endfor %}
+  <p>INSIDE IF</p>
 {% else %}
   <!-- Simple list for 2 years or fewer -->
   <div class="entries-{{ page.entries_layout | default: 'list' }}">
@@ -36,5 +39,6 @@ entries_layout: list
     {% for post in sorted_posts %}
       {% include entry.html %}
     {% endfor %}
+    <p>INSIDE ELSE</p>
   </div>
 {% endif %}
