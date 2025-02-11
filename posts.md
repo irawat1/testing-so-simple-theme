@@ -7,8 +7,9 @@ entries_layout: list
 ---
 
 {% assign postsByYear = site.posts | group_by_exp:"post", "post.date | date: '%Y'" %}
+{% assign years_count = postsByYear | size %}
 
-{% if postsByYear | size > 2 %}
+{% if years_count > 2 %}
   <!-- Year-wise display for more than 2 years of posts -->
   {% for year in postsByYear %}
     <h2 id="{{ year.name }}" class="archive__subtitle">{{ year.name }}</h2>
