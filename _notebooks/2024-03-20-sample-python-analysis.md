@@ -7,6 +7,11 @@ tags:
   - data-analysis
   - pandas
   - matplotlib
+layout: post
+image: 
+  path: /images/python-data-analysis.jpg
+  thumbnail: /images/python-data-analysis-th.jpg
+  caption: "Data Analysis with Python"
 ---
 
 # Sample Data Analysis with Python
