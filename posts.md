@@ -21,7 +21,8 @@ entries_layout: list
 {% else %}
   <!-- Simple list for 2 years or fewer -->
   <div class="entries-{{ page.entries_layout | default: 'list' }}">
-    {% for post in site.posts %}
+    {% assign sorted_posts = site.posts | sort: 'date' | reverse %}
+    {% for post in sorted_posts %}
       {% include entry.html %}
     {% endfor %}
   </div>
